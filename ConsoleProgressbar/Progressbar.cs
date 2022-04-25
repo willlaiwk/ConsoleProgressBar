@@ -1,6 +1,6 @@
-﻿namespace ConsoleProgressbar
+﻿namespace ConsoleProgressBar
 {
-    public class Progressbar
+    public class ProgressBar
     {
         /// <summary>
         /// Previous progress text

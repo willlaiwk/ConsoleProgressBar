@@ -1,4 +1,4 @@
-# ConsoleProgressbar
+# ConsoleProgressBar
 Console progress bar demo for .NET 6 Console App
 
 ## Demo

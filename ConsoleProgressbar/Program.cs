@@ -1,6 +1,6 @@
-﻿using ConsoleProgressbar;
+﻿using ConsoleProgressBar;
 
-var progressbar = new Progressbar();
+var progressbar = new ProgressBar();
 
 var total = 80;
 
