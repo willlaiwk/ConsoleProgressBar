@@ -2,10 +2,21 @@
 {
     public class Progressbar
     {
+        /// <summary>
+        /// Previous progress text
+        /// </summary>
         private string _preProgressText = "";
+
+        /// <summary>
+        /// Current progress text
+        /// </summary>
         private string _currentProgressText = "";
 
-        public void WriteCustom(string text)
+        /// <summary>
+        /// Write the current progress text in console
+        /// </summary>
+        /// <param name="text"></param>
+        public void WriteBase(string text)
         {
             int currentLineCursor = Console.CursorTop;
             Console.SetCursorPosition(0, Console.CursorTop);
@@ -17,13 +28,23 @@
             _preProgressText = _currentProgressText;
         }
 
-        public void Write(string message, int current, int total)
+        /// <summary>
+        /// Show the progress bar in console
+        /// </summary>
+        /// <param name="current"></param>
+        /// <param name="total"></param>
+        public void Show(int current, int total)
         {
             var percent = Math.Round((float)current * 100 / total, MidpointRounding.ToEven);
+            var progressText = new string('=', (int)Math.Floor(percent / 10)) + new string('.', 10 - (int)Math.Floor(percent / 10));
+            var text = $"[{progressText}][{current}/{total}]({percent}%)";
 
-            WriteCustom($"{message}[{current}/{total}]({percent}%)");
+            WriteBase(text);
         }
 
+        /// <summary>
+        /// Reset progress bar
+        /// </summary>
         public void Reset()
         {
             _preProgressText = "";
